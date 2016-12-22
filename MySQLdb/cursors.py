@@ -114,10 +114,10 @@ class BaseCursor(object):
                 for w in warnings:
                     self.messages.append((self.Warning, w))
                 for w in warnings:
-                    warn(w[-1], self.Warning, 3)
+                    warn(w[-1].encode('utf-8'), self.Warning, 3)
             elif self._info:
                 self.messages.append((self.Warning, self._info))
-                warn(self._info, self.Warning, 3)
+                warn(self._info.encode('utf-8'), self.Warning, 3)
 
     def nextset(self):
         """Advance to the next result set.
